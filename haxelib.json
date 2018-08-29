@@ -1,0 +1,11 @@
+{
+  "name": "hxfirebirdsql",
+  "url": "https://github.com/triture/hxfirebirdsql",
+  "license": "MIT",
+  "tags": [ "c++", "cpp", "firebird", "sql", "database", "native"],
+  "description": "Firebird SQL database connector for Haxe",
+  "version": "0.0.1",
+  "releasenote": "Initial release of Haxe Firebird SQL.",
+  "contributors": [ "triture" ],
+  "dependencies": {}
+}
