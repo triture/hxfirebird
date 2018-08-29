@@ -3,19 +3,19 @@ package hxfirebirdsql.vars;
 import hxfirebirdsql.consts.Consts;
 import hxfirebirdsql.consts.Defaults;
 
-class SQLVarText extends SQLVar {
+class SQLVarString extends SQLVar{
 
     public function new() {
-
+        super();
     }
 
     override public function decode(data) {
         var ret;
 
         if (this.subType > 1) {
-            ret = data.readText(this.length, Defaults.DEFAULT_ENCODING);
+            ret = data.readString(Defaults.DEFAULT_ENCODING);
         } else {
-            ret = data.readBuffer(this.length);
+            ret = data.readBuffer();
         }
 
         if (!data.readInt()) {
@@ -26,7 +26,7 @@ class SQLVarText extends SQLVar {
     }
 
     override public function calcBlr(blr) {
-        blr.addByte(Consts.blr_text);
+        blr.addByte(Consts.blr_varying);
         blr.addWord(this.length);
     }
 }
